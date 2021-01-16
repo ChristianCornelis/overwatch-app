@@ -1,6 +1,6 @@
 name: Lint Frontend
 
-on: [push, commit, merge]
+on: [push]
 
 jobs:
   eslint:
