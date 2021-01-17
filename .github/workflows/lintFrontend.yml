@@ -1,12 +1,16 @@
-name: Lint Frontend
+name: CI
 
-on: [push, commit, merge]
+on: [push]
 
 jobs:
-  eslint:
+  eslint-frontend:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./front_end
     steps:
-      - uses: actions/checkout@v1
-      - uses: stefanoeb/eslint-action@1.0.2
-        with:
-          files: src/front_end/
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: npm ci
+      - name: Lint front end
+        run: npx eslint . --ext .js,.jsx,.ts,.tsx
