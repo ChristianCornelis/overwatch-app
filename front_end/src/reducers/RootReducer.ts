@@ -1,5 +1,10 @@
 import { createStore, combineReducers } from 'redux';
-import { userListReducer } from "./userListReducer";
+
+import { userListReducer, UserListState } from "./userListReducer";
+
+export interface RootState {
+    users: UserListState
+}
 
 export const rootReducer = combineReducers({
     users: userListReducer

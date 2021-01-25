@@ -1,5 +1,6 @@
 export const ADD_USER = "ADD_USER";
 export const REMOVE_USER = "REMOVE_USER";
+export const GET_USERS = "GET_USERS";
 
 interface UserAction {
     name: string
@@ -16,4 +17,8 @@ interface RemoveUserAction{
     payload: UserAction
 }
 
-export type UserListActionTypes = AddUserAction | RemoveUserAction;
+interface GetUsersAction {
+    type: typeof GET_USERS
+}
+
+export type UserListActionTypes = AddUserAction | RemoveUserAction | GetUsersAction;
