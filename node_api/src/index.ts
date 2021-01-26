@@ -33,14 +33,15 @@ app.get( "/users/:battleNetID/profile", (req, res) => {
 
         // To do:
         //  - Save Info to DB
-
     }, (error) => {
-        res.send(error)
-
-        // To do:
-        //  - Check error type, handle accordingly
+        res.send(manageOriginApiError(error))
     });
 });
+
+
+function manageOriginApiError(error:any){
+    return(error);
+}
 
 // start the Express server
 app.listen( port, () => {
