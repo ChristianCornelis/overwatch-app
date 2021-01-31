@@ -7,7 +7,7 @@ export interface UserListState {
     users: User[]
 }
 
-//TODO: Remove dis - temporary
+//TODO: Remove this - temporary until we can populate the userlist
 const defaultStateNoApi: UserListState = {
     users: [
         {
@@ -45,7 +45,6 @@ export const userListReducer = (
                     u => u.name !== action.payload.name && u.id != action.payload.id)
                };
         case GET_USERS:
-            console.log("YELLING");
             return {
                 users: state.users
             }

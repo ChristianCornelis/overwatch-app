@@ -4,6 +4,7 @@ import { connect, ConnectedProps } from 'react-redux';
 
 import { getUsers} from '../../reducers/userListReducer';
 import { RootState } from '../../reducers/RootReducer';
+import * as actions from '../../actions/userListActions';
 
 //'mapStateToProps'
 const mapState = (state: RootState) => (getUsers(state));
@@ -11,6 +12,7 @@ const mapState = (state: RootState) => (getUsers(state));
 //'mapDispatchToProps'
 const mapDispatch = {
     // getUsers: () => ({ type: actions.GET_USERS})
+    addUser: (data: actions.UserListAction) => ({ type: actions.ADD_USER, payload: data})
 };
 
 const connector = connect(mapState, mapDispatch);
